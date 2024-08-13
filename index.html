@@ -54,21 +54,11 @@
 </div>
 
 <script>
-    document.getElementById('customForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
-        const form = e.target;
-        
-        // Envia o formulário usando AJAX
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form)
-        }).then(() => {
-            // Redireciona para a página desejada após o envio
-            window.location.href = 'URL_DA_PAGINA_DE_DESTINO';
-        }).catch(error => {
-            console.error('Erro ao enviar o formulário:', error);
-        });
-    });
+    function redirectAfterSubmit() {
+        setTimeout(function() {
+            window.location.href = 'https://inpresspni.github.io/QeA/confirmacao.html';
+        }, 100); // Atraso para garantir o envio do formulário antes do redirecionamento
+    }
 </script>
 
 </body>

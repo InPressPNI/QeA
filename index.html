@@ -43,18 +43,33 @@
     </style>
 </head>
 <body>
-<script type ="text/javascript">var submitted=false</script>
-
-<iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submiteed){window.location='https://inpresspni.github.io/QeA/confirmacao.html';}"></iframe>
     
 <div class="form-container">
     <h2>Faça sua pergunta no campo abaixo</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post" target="hiddenConfirm" onsubmit="submitted=true">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post">
 <!--         <label for="resposta">&nbsp;</label> -->
         <input type="text" id="resposta" placeholder="Digite aqui" name="entry.1176122306" required>
         <input type="submit" value="Enviar">
     </form>
 </div>
+
+    <script>
+    document.getElementById('customForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+        const form = e.target;
+        
+        // Envia o formulário usando AJAX
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+        }).then(() => {
+            // Redireciona para a página desejada após o envio
+            window.location.href = 'https://inpresspni.github.io/QeA/confirmacao.html';
+        }).catch(error => {
+            console.error('Erro ao enviar o formulário:', error);
+        });
+    });
+</script>
 
 </body>
 </html>

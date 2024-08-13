@@ -28,8 +28,9 @@
             margin-bottom: 20px;
             color: #0c0d18;
         }
-        .form-container input[type="text"] {
+        .form-container textarea[type="text"] {
             width: 95%;
+            min-height: 150px;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -67,7 +68,7 @@
     <h2>Faça sua pergunta no campo abaixo</h2>
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post" target="hidden_iframe" onsubmit="redirectAfterSubmit()">
         <!-- <label for="resposta">Sua resposta:</label> -->
-        <input type="text" placeholder="Digite aqui" id="resposta" name="entry.1176122306" required>
+        <textarea type="text" placeholder="Digite aqui" id="resposta" name="entry.1176122306" required></textarea>
         <input type="submit" value="Enviar">
     </form>
 </div>

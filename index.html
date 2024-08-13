@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A</title>
+    <title>Formulário Customizado</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
             margin-bottom: 20px;
         }
         .form-container input[type="text"] {
-            width: 90%;
+            width: 100%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -43,17 +43,17 @@
     </style>
 </head>
 <body>
-    
+
 <div class="form-container">
     <h2>Faça sua pergunta no campo abaixo</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post">
-<!--         <label for="resposta">&nbsp;</label> -->
-        <input type="text" id="resposta" placeholder="Digite aqui" name="entry.1176122306" required>
+    <form id="customForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post">
+<!--         <label for="resposta">Sua resposta:</label> -->
+        <input type="text" placeholder="Digite aqui" id="resposta" name="entry.1176122306" required>
         <input type="submit" value="Enviar">
     </form>
 </div>
 
-    <script>
+<script>
     document.getElementById('customForm').addEventListener('submit', function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
         const form = e.target;
@@ -64,7 +64,7 @@
             body: new FormData(form)
         }).then(() => {
             // Redireciona para a página desejada após o envio
-            window.location.href = 'https://inpresspni.github.io/QeA/confirmacao.html';
+            window.location.href = 'URL_DA_PAGINA_DE_DESTINO';
         }).catch(error => {
             console.error('Erro ao enviar o formulário:', error);
         });

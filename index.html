@@ -23,7 +23,7 @@
             margin-bottom: 20px;
         }
         .form-container input[type="text"] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -40,35 +40,30 @@
         .form-container input[type="submit"]:hover {
             background-color: #45a049;
         }
+        iframe {
+            display: none; /* Torna o iframe invisível */
+        }
     </style>
 </head>
 <body>
 
 <div class="form-container">
-    <h2>Faça sua pergunta no campo abaixo</h2>
-    <form id="customForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post">
-<!--         <label for="resposta">Sua resposta:</label> -->
-        <input type="text" placeholder="Digite aqui" id="resposta" name="entry.1176122306" required>
+    <h2>Responda à pergunta</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post" target="hidden_iframe" onsubmit="redirectAfterSubmit()">
+        <label for="resposta">Sua resposta:</label>
+        <input type="text" id="resposta" name="entry.1176122306" required>
         <input type="submit" value="Enviar">
     </form>
 </div>
 
+<iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+
 <script>
-    document.getElementById('customForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
-        const form = e.target;
-        
-        // Envia o formulário usando AJAX
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form)
-        }).then(() => {
-            // Redireciona para a página desejada após o envio
+    function redirectAfterSubmit() {
+        setTimeout(function() {
             window.location.href = 'https://inpresspni.github.io/QeA/confirmacao.html';
-        }).catch(error => {
-            console.error('Erro ao enviar o formulário:', error);
-        });
-    });
+        }, 500); // Aguarda 500ms antes de redirecionar
+    }
 </script>
 
 </body>

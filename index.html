@@ -43,13 +43,13 @@
     </style>
 </head>
 <body>
-<script type ="text/javascript">var submitted</script>
+<script type ="text/javascript">var submitted=false</script>
 
-<iframe name="hiddenConfrm" id="hiddenConfirm" style="display:none;" onload="if(submitted){window.location='confirmacao.html'}"></iframe>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submiteed){window.location='confirmacao.html';}"></iframe>
     
 <div class="form-container">
     <h2>Faça sua pergunta no campo abaixo</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post" target="hiddenConfirm" onsubimt="submitted=true">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeIJ7MAVL-x8yTgqYcAseg5gNuDTgGz407JY393ZWSYpbf_jA/formResponse" method="post" target="hiddenConfirm" onsubmit="submitted=true">
 <!--         <label for="resposta">&nbsp;</label> -->
         <input type="text" id="resposta" placeholder="Digite aqui" name="entry.1176122306" required>
         <input type="submit" value="Enviar">
